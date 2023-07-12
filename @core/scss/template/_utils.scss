@@ -1,0 +1,15 @@
+@use "sass:string";
+
+@function get-first-value($var) {
+  $start-at: string.index(#{$var}, " ");
+
+  @if $start-at {
+    @return string.slice(
+      #{$var},
+      0,
+      $start-at
+    );
+  } @else {
+    @return $var;
+  }
+}
