@@ -1,0 +1,31 @@
+@use "sass:map";
+@use "utils";
+
+$vertical-nav-horizontal-padding-margin-custom: 1.91rem;
+$vertical-nav-horizontal-padding-start: utils.get-first-value($vertical-nav-horizontal-padding-margin-custom) !default;
+
+@forward "@core/scss/base/variables" with (
+  $default-layout-with-vertical-nav-navbar-footer-roundness: 8px !default,
+
+  $layout-vertical-nav-collapsed-width: 84px !default,
+  $vertical-nav-background-color-rgb: var(--v-theme-surface) !default,
+  $vertical-nav-items-nested-icon-size: 0.5rem !default,
+  $vertical-nav-horizontal-padding: 0.9375rem 0.625rem !default,
+  $vertical-nav-header-inline-spacing: 0 !default,
+  $vertical-nav-header-padding: 1rem 2.2rem !default,
+  $vertical-nav-section-title-mt: 1.4rem !default,
+  $vertical-nav-section-title-mb: 0.65rem !default,
+  $vertical-nav-items-icon-size: 1.375rem !default,
+  $vertical-nav-navbar-style: "floating" !default, // elevated, floating
+  $vertical-nav-floating-navbar-top: 0.75rem !default,
+  $vertical-nav-items-icon-margin-inline-end: 0.625rem !default,
+
+  $horizontal-nav-padding: 0.625rem !default,
+  $horizontal-nav-items-icon-size: 1.375rem !default,
+  $horizontal-nav-third-level-icon-size: 0.5rem !default,
+  $horizontal-nav-items-icon-margin-inline-end: 0.5rem !default,
+);
+
+$slider-thumb-label-color: rgb(117, 117, 117) !default;
+
+$vertical-nav-header-margin-top: 0.75rem !default;

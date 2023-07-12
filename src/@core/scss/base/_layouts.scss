@@ -1,0 +1,39 @@
+@use "@configured-variables" as variables;
+
+.layout-wrapper.layout-nav-type-vertical {
+  &.layout-content-height-fixed {
+    .page-content-container {
+      > .v-layout:first-child {
+        overflow: hidden;
+        min-block-size: 100%;
+
+      > .v-main {
+          .v-main__wrap > :first-child {
+            block-size: 100%;
+            overflow-y: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+.layout-wrapper.layout-nav-type-horizontal {
+  &.layout-content-height-fixed {
+    > .layout-page-content {
+      display: flex;
+    }
+  }
+}
+
+@if variables.$vertical-nav-navbar-style == "floating" {
+  .layout-wrapper.layout-nav-type-vertical.layout-navbar-sticky {
+    .layout-navbar {
+      inset-block-start: variables.$vertical-nav-floating-navbar-top;
+    }
+
+    .layout-page-content {
+      margin-block-start: variables.$vertical-nav-floating-navbar-top;
+    }
+  }
+}

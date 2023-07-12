@@ -1,0 +1,24 @@
+%nav {
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+}
+
+%nav-link-active {
+  --v-activated-opacity: 0.16;
+
+  background-color: rgba(var(--v-theme-primary), var(--v-activated-opacity));
+  box-shadow: none;
+  color: rgb(var(--v-theme-primary));
+}
+
+%nav-link-nested-active {
+  background-color: transparent !important;
+  box-shadow: none;
+  color: rgba(var(--v-theme-on-surface), var(--v-high-emphasis-opacity)) !important;
+  font-weight: 600;
+
+  .nav-item-icon {
+    color: rgb(var(--v-global-theme-primary)) !important;
+    filter: drop-shadow(rgb(var(--v-global-theme-primary)) 0 0 2px);
+    transform: scale(1.2);
+  }
+}

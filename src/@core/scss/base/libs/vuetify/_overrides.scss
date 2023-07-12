@@ -1,0 +1,240 @@
+@use "@core/scss/base/utils";
+@use "@configured-variables" as variables;
+
+.v-application__wrap {
+  min-height: calc(var(--vh, 1vh) * 100);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-h1,
+.text-h2,
+.text-h3,
+.text-h4,
+.text-h5,
+.text-h6,
+.text-button,
+.text-overline,
+.v-card-title {
+  color: rgba(var(--v-theme-on-background), var(--v-high-emphasis-opacity));
+}
+
+.v-application,
+.text-body-1,
+.text-body-2,
+.text-subtitle-1,
+.text-subtitle-2 {
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+}
+
+.v-row {
+  .v-col,
+  [class^="v-col-*"] {
+    .v-input__details {
+      margin-block-end: 0;
+    }
+  }
+}
+
+// 👉 Button
+@if variables.$vuetify-reduce-default-compact-button-icon-size {
+  .v-btn--density-compact.v-btn--size-default {
+    .v-btn__content > svg {
+      block-size: 22px;
+      font-size: 22px;
+      inline-size: 22px;
+    }
+  }
+}
+
+.v-card-text {
+  & + & {
+    padding-block-start: 0 !important;
+  }
+}
+
+.v-checkbox.v-input,
+.v-switch.v-input {
+  --v-input-control-height: auto;
+
+  flex: unset;
+}
+
+.v-selection-control--density-comfortable {
+  &.v-checkbox-btn,
+  &.v-radio,
+  &.v-radio-btn {
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.5625rem;
+    }
+  }
+}
+
+.v-selection-control--density-compact {
+  &.v-radio,
+  &.v-radio-btn,
+  &.v-checkbox-btn {
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.3125rem;
+    }
+  }
+}
+
+.v-selection-control--density-default {
+  &.v-checkbox-btn,
+  &.v-radio,
+  &.v-radio-btn {
+    .v-selection-control__wrapper {
+      margin-inline-start: -0.6875rem;
+    }
+  }
+}
+
+.v-radio-group {
+  .v-selection-control-group {
+    .v-radio:not(:last-child) {
+      margin-inline-end: 0.9rem;
+    }
+  }
+}
+
+.disable-tab-transition {
+  overflow: unset !important;
+
+  .v-window__container {
+    block-size: auto !important;
+  }
+
+  .v-window-item:not(.v-window-item--active) {
+    display: none !important;
+  }
+
+  .v-window__container .v-window-item {
+    transform: none !important;
+  }
+}
+
+.v-list {
+  .v-list-item__prepend > .v-icon,
+  .v-list-item__append > .v-icon {
+    opacity: var(--v-high-emphasis-opacity);
+  }
+}
+
+.card-list {
+  --v-card-list-gap: 20px;
+
+  &.v-list {
+    padding-block: 0;
+  }
+
+  .v-list-item {
+    min-block-size: unset;
+    min-block-size: auto !important;
+    padding-block: 0 !important;
+    padding-inline: 0 !important;
+
+    > .v-ripple__container {
+      opacity: 0;
+    }
+
+    &:not(:last-child) {
+      padding-block-end: var(--v-card-list-gap) !important;
+    }
+  }
+
+  .v-list-item:hover,
+  .v-list-item:focus,
+  .v-list-item:active,
+  .v-list-item.active {
+    > .v-list-item__overlay {
+      opacity: 0 !important;
+    }
+  }
+}
+
+.v-divider {
+  color: rgb(var(--v-border-color));
+}
+
+.v-data-table {
+  .v-checkbox-btn .v-selection-control__wrapper {
+    margin-inline-start: 0 !important;
+  }
+
+  .v-selection-control {
+    display: flex !important;
+  }
+
+  .v-pagination {
+    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  }
+}
+
+.v-data-table-footer {
+  margin-block-start: 1rem;
+}
+
+.v-field:hover .v-field__outline {
+  --v-field-border-opacity: var(--v-medium-emphasis-opacity);
+}
+
+.v-label {
+  opacity: 1 !important;
+
+  &:not(.v-field-label--floating) {
+    color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+  }
+}
+
+.v-overlay__scrim,
+.v-navigation-drawer__scrim {
+  background: rgba(var(--v-overlay-scrim-background), var(--v-overlay-scrim-opacity)) !important;
+  opacity: 1 !important;
+}
+
+.v-messages {
+  color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));
+  opacity: 1;
+}
+
+.v-alert__close {
+  .v-btn--icon .v-icon {
+    --v-icon-size-multiplier: 1.5;
+  }
+}
+
+.v-badge__badge {
+  display: flex;
+  align-items: center;
+}
+
+.v-btn:focus-visible::after {
+  opacity: 0 !important;
+}
+
+.v-input:not(.v-select--chips) .v-select__selection {
+  .v-chip {
+    margin-block: 2px var(--select-chips-margin-bottom);
+  }
+}
+
+.v-card-subtitle,
+.v-list-item-subtitle {
+  color: rgba(var(--v-theme-on-background), var(--v-medium-emphasis-opacity));
+}
+
+.v-field__input {
+  @at-root {
+    & input::placeholder,
+    input#{&}::placeholder,
+    textarea#{&}::placeholder {
+      color: rgba(var(--v-theme-on-surface), var(--v-disabled-opacity)) !important;
+      opacity: 1 !important;
+    }
+  }
+}
