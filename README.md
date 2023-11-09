@@ -1,7 +1,3 @@
-# vue
-
-Vue 3.
-
 ## TODO
 
 Finalizar as ações (typescript incompletos), logout, login, etc.
